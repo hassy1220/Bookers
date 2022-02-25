@@ -1,0 +1,37 @@
+<main>
+<p class="alert"><%= flash[:alerts] %></p>
+<h1>Books</h1>
+<table class="table-list">
+　 <tr>
+　   <th>Title</th>
+　   <th>Body</th>
+　 </tr>
+  <% @books.each do |book| %>
+　 <tr>
+     <th class="table-a"><p><%= book.title %></p></th>
+     <th class="table-b"><p><%= book.body %></p></th>
+     <th class="table-c">
+       <span class="item"><%= link_to"Show","/books/#{book.id}" %></span>
+       <span class="item"><%= link_to"Edit","/books/#{book.id}/edit" %></span>
+       <span class="item"><%= link_to"Destroy","/books/#{book.id}",method: :delete,"data-confirm"=>"本当に削除しますか" %></span>
+     </th>
+    </tr>
+  <% end %>
+</table>
+<h1>New Book</h1>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_with model:@book,url:'/books',method: :post do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+  <%= f.submit"Create Book" %>
+<% end %>
+</main>
