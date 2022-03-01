@@ -1,8 +1,7 @@
 <main>
 <p class="alert"><%= flash[:alert] %></p>
 <p class="alert"><%= flash[:alerted] %></p>
-<p><span>Title:</span><%= @book.title %></p>
-<p><span>Body:</span><%= @book.body %></p>
-<%= link_to"Edit","/books/#{@book.id}/edit" %>
-<%= link_to"back","/books" %>
+<p><span class="family">Title: </span><%= @book.title %></p>
+<p class="margin"><span class="family">Body: </span><%= @book.body %></p>
+<p class="margin"><%= link_to"Edit","/books/#{@book.id}/edit" %><span> | </span><%= link_to"back","/books" %></p>
 </main>

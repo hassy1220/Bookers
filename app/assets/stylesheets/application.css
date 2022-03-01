@@ -20,18 +20,17 @@
    box-sizing:border-box;
    font-weight: lighter;
    font-family:serif;
-
  }
 
  main{
-   width:90%;
+   width:100%;
    margin:0 auto;
    margin-top:50px;
-
+   margin-left:40px;
  }
 
 .table-list{
-  width:50%;
+  width:60%;
   /*background-color:blue;*/
   border-spacing: 10px ;
 }
@@ -54,4 +53,8 @@
 
 .alert{
   color:green;
+}
+
+.family{
+  
 }
